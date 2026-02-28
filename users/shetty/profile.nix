@@ -94,6 +94,7 @@
     nmap.enable = true;
     wget.enable = true;
     android-tools.enable = true;
+    embedded-dev.enable = true;
     universal-android-debloater.enable = true;
     nixfmt-classic.enable = true;
     huggingface-hub.enable = true;

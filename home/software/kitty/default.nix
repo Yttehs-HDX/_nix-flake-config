@@ -1,9 +1,9 @@
-{ config, lib, username, ... }:
+{ config, lib, pkgs, username, ... }:
 
 let
   mkSoftware = import ../_lib/mkSoftwarePackage.nix {
     inherit lib config username;
     name = "kitty";
   };
-  inner = import ./inner.nix { inherit config lib; };
+  inner = import ./inner.nix { inherit config lib pkgs; };
 in mkSoftware inner

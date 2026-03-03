@@ -1,11 +1,17 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 let
   lookup = import ../../../_lib/getStyle.nix { };
   fonts = (lookup.getStyle config).fonts or { };
   monoDefault = (fonts.mono or { }).default or "JetBrainsMono Nerd Font";
+
+  icat = pkgs.writeShellScriptBin "icat" ''
+    exec ${pkgs.kitty}/bin/kitten icat "$@"
+  '';
 in {
   imports = [ ./themes ];
+
+  home.packages = [ icat ];
 
   programs.kitty = {
     enable = true;

@@ -33,6 +33,7 @@
     rog-control-center.enable = true;
     supergfxctl.enable = true;
     tlp.enable = true;
+    virt-manager.enable = true;
     waydroid.enable = true;
     zram.enable = true;
     nix-ld.enable = true;

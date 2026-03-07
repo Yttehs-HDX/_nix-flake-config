@@ -16,6 +16,7 @@
     ./rog-control-center
     ./supergfxctl
     ./tlp
+    ./virt-manager
     ./waydroid
     ./zram
   ];

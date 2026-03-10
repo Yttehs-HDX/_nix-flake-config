@@ -56,6 +56,7 @@
     copilot-cli.enable = true;
     tmux.enable = true;
     git.enable = true;
+    lazydocker.enable = true;
     lazygit.enable = true;
     gh.enable = true;
     vscode.enable = true;

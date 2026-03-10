@@ -34,6 +34,7 @@
     ./kitty
     ./kdeconnect
     ./krita
+    ./lazydocker
     ./lazygit
     ./lolcat
     ./mikusays

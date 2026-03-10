@@ -41,6 +41,7 @@ sudo nixos-rebuild switch --flake .#<hostname>
   - [`styles/`](../desktop/styles/) – 主题与字体
 
 ## Flake Inputs
+
 | Input | 描述 |
 |-------|------|
 | [nixpkgs](https://github.com/nixos/nixpkgs) | NixOS 25.11 软件包 |
@@ -48,6 +49,7 @@ sudo nixos-rebuild switch --flake .#<hostname>
 | [nur](https://github.com/nix-community/NUR) | Nix User Repository |
 | [nixvim](https://github.com/nix-community/nixvim) | Neovim 的 Nix 配置 |
 | [hexecute](https://github.com/ThatOtherAndrew/Hexecute) | 自定义工具 |
+| [openclaw](https://github.com/openclaw/nix-openclaw) | OpenClaw |
 
 ## 致谢
 部分配置参考自 [Sly-Harvey/NixOS](https://github.com/Sly-Harvey/NixOS)。

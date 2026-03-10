@@ -41,6 +41,8 @@ sudo nixos-rebuild switch --flake .#<hostname>
   - [`styles/`](desktop/styles/) – fonts and themes
 
 ## Flake Inputs
+Note: Added one external dependency, `openclaw`.
+
 | Input | Description |
 |-------|-------------|
 | [nixpkgs](https://github.com/nixos/nixpkgs) | NixOS 25.11 packages |
@@ -48,6 +50,7 @@ sudo nixos-rebuild switch --flake .#<hostname>
 | [nur](https://github.com/nix-community/NUR) | Nix User Repository |
 | [nixvim](https://github.com/nix-community/nixvim) | Neovim configuration in Nix |
 | [hexecute](https://github.com/ThatOtherAndrew/Hexecute) | Custom utility |
+| [openclaw](https://github.com/openclaw/nix-openclaw) | OpenClaw |
 
 ## Credit
 Some configurations are based on

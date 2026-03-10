@@ -5,6 +5,7 @@
     ./options.nix
     ./asusctl
     ./bluetooth
+    ./docker
     ./firewall
     ./grub
     ./linux-latest

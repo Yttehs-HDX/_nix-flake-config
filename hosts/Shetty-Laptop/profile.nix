@@ -23,6 +23,7 @@
 
   system.software = {
     bluetooth.enable = true;
+    docker.enable = true;
     networking.enable = true;
     firewall.enable = true;
     grub.enable = true;

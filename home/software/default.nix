@@ -45,6 +45,7 @@
     ./nmap
     ./obs-studio
     ./onlyoffice
+    ./openclaw
     ./osu-lazer-bin
     ./pipes-rs
     ./poppler-utils

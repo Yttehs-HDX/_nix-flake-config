@@ -1,0 +1,5 @@
+{ ... }:
+
+{
+  programs.openclaw.enable = true;
+}

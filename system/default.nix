@@ -1,4 +1,4 @@
-{ lib, nur, home-manager, hexecute, nixvim, ... }:
+{ lib, nur, home-manager, hexecute, openclaw, nixvim, ... }:
 { hostname, profiles }:
 
 let
@@ -10,7 +10,7 @@ let
   system = hostProfile.host.system;
 in lib.nixosSystem {
   inherit system;
-  specialArgs = { inherit hostname nur hexecute nixvim system; };
+  specialArgs = { inherit hostname nur hexecute openclaw nixvim system; };
   modules = [
     ({ ... }: { config.profile = profiles; })
 

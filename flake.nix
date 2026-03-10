@@ -18,13 +18,25 @@
     };
 
     # Hexecute (Custom utility for magic power)
-    hexecute = { url = "github:ThatOtherAndrew/Hexecute"; };
+    hexecute = {
+      url = "github:ThatOtherAndrew/Hexecute";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # OpenClaw (AI coding agent)
+    openclaw = {
+      url = "github:openclaw/nix-openclaw";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # NixVim (Custom NixOS Vim configuration)
-    nixvim = { url = "github:nix-community/nixvim/nixos-25.11"; };
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, nur, home-manager, hexecute, nixvim, ... }:
+  outputs = { nixpkgs, nur, home-manager, hexecute, openclaw, nixvim, ... }:
     let
       lib = nixpkgs.lib;
       hostRegistry = import ./hosts;
@@ -34,8 +46,9 @@
         users = userRegistry;
       };
       hostNames = builtins.attrNames hostRegistry;
-      system =
-        import ./system { inherit lib nur home-manager hexecute nixvim; };
+      system = import ./system {
+        inherit lib nur home-manager hexecute openclaw nixvim;
+      };
     in {
       nixosConfigurations = lib.genAttrs hostNames
         (hostname: system { inherit hostname profiles; });

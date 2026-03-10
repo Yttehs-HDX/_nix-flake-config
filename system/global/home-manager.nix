@@ -1,4 +1,4 @@
-{ lib, config, nur, hexecute, nixvim, system, hostname, ... }:
+{ lib, config, nur, hexecute, openclaw, nixvim, system, hostname, ... }:
 
 let
   lookup = import ../../_lib/getProfile.nix { inherit lib; };
@@ -17,15 +17,21 @@ in {
     backupFileExtension = "hm-backup";
 
     sharedModules = [
-      nixvim.homeModules.nixvim
       ({ config, ... }: { config.profile = profiles; })
+
+      # nixvim
+      nixvim.homeModules.nixvim
+
+      # openclaw
+      openclaw.homeManagerModules.openclaw
+      ({ ... }: { nixpkgs.overlays = [ openclaw.overlays.default ]; })
     ];
 
     users = homeManagerUsers;
 
     extraSpecialArgs = {
       nur = nur.legacyPackages.${system}.repos;
-      inherit hexecute nixvim;
+      inherit hexecute;
     };
   };
 }

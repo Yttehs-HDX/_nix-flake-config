@@ -1,5 +1,8 @@
 { ... }:
 
 {
-  programs.openclaw.enable = true;
+  programs.openclaw = {
+    enable = true;
+    excludeTools = [ "git" "jq" "ripgrep" "uv" ];
+  };
 }

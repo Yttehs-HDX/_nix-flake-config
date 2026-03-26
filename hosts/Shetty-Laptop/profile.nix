@@ -36,6 +36,7 @@
     tlp.enable = true;
     virt-manager.enable = true;
     waydroid.enable = true;
+    wireshark.enable = true;
     zram.enable = true;
     nix-ld.enable = true;
   };

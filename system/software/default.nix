@@ -19,6 +19,7 @@
     ./tlp
     ./virt-manager
     ./waydroid
+    ./wireshark
     ./zram
   ];
 }

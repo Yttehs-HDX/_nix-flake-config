@@ -66,7 +66,7 @@
     htop.enable = true;
     onlyoffice.enable = true;
     obs-studio.enable = true;
-    openclaw.enable = true;
+    # openclaw.enable = true;
     neovim.enable = true;
     net-tools.enable = true;
     nix-index.enable = true;

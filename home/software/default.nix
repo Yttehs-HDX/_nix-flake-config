@@ -10,6 +10,7 @@
     ./cbonsai
     ./clash-verge-rev
     ./cmatrix
+    ./codex
     ./command-not-found
     ./copilot-cli
     ./cryptsetup

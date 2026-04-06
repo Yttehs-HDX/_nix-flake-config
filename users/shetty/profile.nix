@@ -54,6 +54,7 @@
     fzf.enable = true;
     direnv.enable = true;
     copilot-cli.enable = true;
+    codex.enable = true;
     tmux.enable = true;
     git.enable = true;
     lazydocker.enable = true;

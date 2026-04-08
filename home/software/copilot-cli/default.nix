@@ -5,5 +5,5 @@ let
     inherit lib config username;
     name = "copilot-cli";
   };
-  inner = import ./inner.nix { inherit pkgs; };
+  inner = import ./inner.nix { inherit config lib pkgs; };
 in mkSoftware inner

@@ -1,4 +1,5 @@
-{ lib, config, nur, hexecute, openclaw, nixvim, system, hostname, ... }:
+{ lib, config, nur, hexecute, openclaw, nixvim, nixpkg-unstable, system
+, hostname, ... }:
 
 let
   lookup = import ../../_lib/getProfile.nix { inherit lib; };
@@ -31,7 +32,7 @@ in {
 
     extraSpecialArgs = {
       nur = nur.legacyPackages.${system}.repos;
-      inherit hexecute;
+      inherit hexecute nixpkg-unstable;
     };
   };
 }

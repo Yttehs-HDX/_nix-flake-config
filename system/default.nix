@@ -1,4 +1,4 @@
-{ lib, nur, home-manager, hexecute, openclaw, nixvim, ... }:
+{ lib, nur, home-manager, hexecute, openclaw, nixvim, nixpkg-unstable, ... }:
 { hostname, profiles }:
 
 let
@@ -10,7 +10,13 @@ let
   system = hostProfile.host.system;
 in lib.nixosSystem {
   inherit system;
-  specialArgs = { inherit hostname nur hexecute openclaw nixvim system; };
+  specialArgs = {
+    inherit hostname nur hexecute openclaw nixvim system;
+    nixpkg-unstable.pkgs = import nixpkg-unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
+  };
   modules = [
     ({ ... }: { config.profile = profiles; })
 

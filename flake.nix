@@ -4,6 +4,7 @@
   inputs = {
     # Nix packages
     nixpkgs = { url = "github:nixos/nixpkgs?ref=nixos-25.11"; };
+    nixpkg-unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
 
     # Home Manager (for managing users)
     home-manager = {
@@ -36,7 +37,8 @@
     };
   };
 
-  outputs = { nixpkgs, nur, home-manager, hexecute, openclaw, nixvim, ... }:
+  outputs = { nixpkgs, nixpkg-unstable, nur, home-manager, hexecute, openclaw
+    , nixvim, ... }:
     let
       lib = nixpkgs.lib;
       hostRegistry = import ./hosts;
@@ -47,7 +49,7 @@
       };
       hostNames = builtins.attrNames hostRegistry;
       system = import ./system {
-        inherit lib nur home-manager hexecute openclaw nixvim;
+        inherit lib nur home-manager hexecute openclaw nixvim nixpkg-unstable;
       };
     in {
       nixosConfigurations = lib.genAttrs hostNames
